@@ -65,6 +65,7 @@ VOID  fx_stm32_sd_driver(FX_MEDIA *media_ptr)
  /* the SD was initialized by the application */
   is_initialized = 1;
 #endif
+
   /* before performing any operation, check the status of the SD IP */
   if (is_initialized == 1)
   {
@@ -82,6 +83,7 @@ VOID  fx_stm32_sd_driver(FX_MEDIA *media_ptr)
   /* if the DMA is not used there isn't any constraint on buffer alignment */
   unaligned_buffer = 0;
 #endif
+
   /* Process the driver request specified in the media control block.  */
   switch(media_ptr->fx_media_driver_request)
   {

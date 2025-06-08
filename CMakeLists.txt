@@ -52,14 +52,14 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    app/nand_flash_lx_fx_example/demo_filex_nand_flash.c
-    app/nand_flash_lx_fx_example/fx_stm32_levelx_nand_driver.c
-    app/nand_flash_lx_fx_example/lx_stm32_nand_simulator_driver.c
+    app/usd_fx_example/demo_usd_filex.c
+    app/usd_fx_example/fx_stm32_sd_driver_glue.c
+    app/usd_fx_example/fx_stm32_sd_driver.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
-    app/nand_flash_lx_fx_example
+    app/usd_fx_example
 )
 
 # Add project symbols (macros)
