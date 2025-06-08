@@ -61,6 +61,9 @@ void Error_Handler(void);
 #define GREEN_LED_GPIO_Port GPIOB
 #define RED_LED_Pin GPIO_PIN_14
 #define RED_LED_GPIO_Port GPIOB
+#define SD_DETECT_Pin GPIO_PIN_7
+#define SD_DETECT_GPIO_Port GPIOD
+#define SD_DETECT_EXTI_IRQn EXTI9_5_IRQn
 #define YELLOW_LED_Pin GPIO_PIN_1
 #define YELLOW_LED_GPIO_Port GPIOE
 

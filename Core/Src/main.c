@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "memorymap.h"
+#include "sdmmc.h"
 #include "usart.h"
 #include "gpio.h"
 
