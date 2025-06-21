@@ -1,12 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
 
-#
-# This file is generated only once,
-# and is not re-generated if converter is called multiple times.
-#
-# User is free to modify the file as much as necessary
-#
-
 # Setup compiler settings
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
@@ -44,6 +37,7 @@ add_subdirectory(cmake/stm32cubemx)
 add_subdirectory(middleware/threadx)
 add_subdirectory(middleware/filex)
 add_subdirectory(middleware/levelx)
+add_subdirectory(middleware/usbx)
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
@@ -52,14 +46,20 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
-    app/usd_fx_example/demo_usd_filex.c
-    app/usd_fx_example/fx_stm32_sd_driver_glue.c
-    app/usd_fx_example/fx_stm32_sd_driver.c
+    examples/usbx_usd_example/threadx/app_threadx.c
+    examples/usbx_usd_example/threadx/app/app_azure_rtos.c
+    examples/usbx_usd_example/usbx/app/app_usbx_device.c
+    examples/usbx_usd_example/usbx/app/ux_device_descriptors.c
+    examples/usbx_usd_example/usbx/app/ux_device_msc.c
+    examples/usbx_usd_example/app.c
 )
 
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
-    app/usd_fx_example
+    examples/usbx_usd_example/threadx
+    examples/usbx_usd_example/threadx/app
+    examples/usbx_usd_example/usbx/target
+    examples/usbx_usd_example/usbx/app
 )
 
 # Add project symbols (macros)
@@ -73,4 +73,5 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     threadx
     levelx
     filex
+    usbx
 )
