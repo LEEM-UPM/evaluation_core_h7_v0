@@ -15,7 +15,7 @@ target_include_directories(filex INTERFACE
     ports/generic/inc
     ${CMAKE_CURRENT_SOURCE_DIR}
 
-# Threadx headers
+    # Threadx headers
     ../threadx/common/inc
     ../threadx/ports/cortex_m7/gnu/inc
 )
